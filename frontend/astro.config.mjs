@@ -1,14 +1,13 @@
-import { defineConfig } from "astro/config"
-import UnoCSS from "@unocss/astro"
-import solidJs from "@astrojs/solid-js"
+import { defineConfig } from "astro/config";
+import UnoCSS from "@unocss/astro";
+import solidJs from "@astrojs/solid-js";
+
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    UnoCSS({
-      injectReset: true,
-      extractors: [],
-    }),
-    solidJs(),
-  ],
-})
+  integrations: [UnoCSS({
+    injectReset: true,
+    extractors: []
+  }), solidJs(), mdx()]
+});

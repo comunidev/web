@@ -8,13 +8,13 @@ import { Image } from "astro:assets";
 
 <MainLayout title="comunidev - Inicio" page="home">
   <main class="w-full flex flex-col items-center justify-center flex-1">
-    <a href="https://discord.gg/rsBNkmJA">
+    <a href="https://discord.gg/rsBNkmJA" class="flex justify-center">
       <div
-        class="w-md flex flex-col items-center p-16 border-[#26FA87] hover:border-[#36FF8A] border-solid border rounded-2 g2 hover:shadow-white hover:shadow-lg hover:shadow-op-1 hover:shadow transition-shadow hover:transition-shadow"
+        class="w-80% sm:w-md flex flex-col items-center p-8 sm:p-16 border-[#26FA87] hover:border-[#36FF8A] border-solid border rounded-2 g2 hover:shadow-white hover:shadow-lg hover:shadow-op-1 hover:shadow transition-shadow hover:transition-shadow max-w-full"
       >
-        <span class="color-white mb-10">Ingresa a nuestra comunidad en</span>
-        <Image src={discordIso} class="w-24 mb-10" alt="discord-iso" />
-        <Image src={discordLogo} class="w-42" alt="discord-logo" />
+        <span class="color-white mb-6 sm:mb-10 text-center">Únete a la comunidad en</span>
+        <Image src={discordIso} class="w-16 sm:w-24 mb-6 sm:mb-10" alt="discord-iso" />
+        <Image src={discordLogo} class="w-24 sm:w-42" alt="discord-logo" />
       </div>
     </a>
   </main>
