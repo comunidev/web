@@ -2,6 +2,9 @@
   "name": "comunidev-frontend",
   "version": "0.0.0",
   "description": "",
+  "engines": {
+    "node": ">=18.0.0 <19.0.0"
+  },
   "scripts": {
     "start": "astro dev",
     "dev": "chii start -p 8080 & astro dev",
