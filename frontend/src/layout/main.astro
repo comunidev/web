@@ -1,12 +1,14 @@
 ---
-
-interface Props{
+interface Props {
   title: string;
   page: string;
 }
+import { Image } from "astro:assets";
+import logoWeb from "../images/logo-web.png";
 
 const { title, page } = Astro.props;
 ---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -17,15 +19,30 @@ const { title, page } = Astro.props;
   </head>
 
   <body class="h-100vh w-full flex flex-col">
-    <header class="pt-12 pl-16 pr-16 ">
+    <header class="pt-12 pl-16 pr-16">
       <div class="w-48 mb-12">
-        <img src="/logo-web.png" />
+        <Image src={logoWeb} alt="logoWeb" />
       </div>
       <nav class="border-[#26FA87] border-solid border rounded-2 g1">
         <ul class="flex flex-row p-4 color-white text-md">
-          <li class="ml-2 mr-8"><a href="/" style={{color: page=="home" ? "#26FA87" : "white"}}>inicio</a></li>
-          <li class="mr-8"><a href="/blog" style={{color: page=="blog" ? "#26FA87" : "white"}}>blog</a></li>
-          <li><a href="/recursos" style={{color: page=="recursos" ? "#26FA87" : "white"}}>recursos</a></li>
+          <li class="ml-2 mr-8">
+            <a href="/" style={{ color: page == "home" ? "#26FA87" : "white" }}
+              >inicio</a
+            >
+          </li>
+          <li class="mr-8">
+            <a
+              href="/blog"
+              style={{ color: page == "blog" ? "#26FA87" : "white" }}>blog</a
+            >
+          </li>
+          <li>
+            <a
+              href="/recursos"
+              style={{ color: page == "recursos" ? "#26FA87" : "white" }}
+              >recursos</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
@@ -33,7 +50,7 @@ const { title, page } = Astro.props;
   </body>
   <style>
     * {
-      @apply font-sans
+      @apply font-sans;
     }
 
     body {

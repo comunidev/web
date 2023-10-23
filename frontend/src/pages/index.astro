@@ -1,40 +1,61 @@
 ---
-import MainLayout from '../layout/main.astro'
+import MainLayout from "../layout/main.astro";
+import discordIso from "../images/discord-iso.svg";
+import discordLogo from "../images/discord-logo.svg";
 
+import { Image } from "astro:assets";
 ---
+
 <MainLayout title="comunidev - Inicio" page="home">
-    <main class="w-full flex flex-col items-center justify-center flex-1">
-      <a href="https://discord.gg/rsBNkmJA">
-        <div class="w-md flex flex-col items-center p-16 border-[#26FA87] hover:border-[#36FF8A] border-solid border rounded-2 g2 hover:shadow-white hover:shadow-lg hover:shadow-op-1 hover:shadow transition-shadow hover:transition-shadow">
-          <span class="color-white mb-10">Ingresa a nuestra comunidad en</span>
-          <img src="discord-iso.svg" class="w-24 mb-10"/>
-          <img src="discord-logo.svg" class="w-42"/>
-        </div>
-      </a>
-    </main>
-  </body>
-  <style>
-    * {
-      @apply font-sans
-    }
-
-    body {
-      background-color: #010f1a;
-    }
-
-    .g1 {
-      background: rgb(5,35,23);
-      background: linear-gradient(90deg, rgba(5,35,23,0.14) 0%, rgba(53,130,57,0.1) 27%, rgba(7,55,30,0.18) 74%, rgba(38,212,122,0) 100%);
-    }
-
-    .g2 {
-      background: rgb(17,64,38);
-      background: linear-gradient(148deg, rgba(17,64,38,0.05) 24%, rgba(0,79,35,0.1) 56%, rgba(38,212,122,0) 100%);
-    }
-
-    .g2:hover {
-      background: rgb(17,64,38);
-      background: linear-gradient(148deg, rgba(17,64,38,0.1) 24%, rgba(0,79,35,0.2) 56%, rgba(38,212,122,0.1) 100%);
-    }
-  </style>
+  <main class="w-full flex flex-col items-center justify-center flex-1">
+    <a href="https://discord.gg/rsBNkmJA">
+      <div
+        class="w-md flex flex-col items-center p-16 border-[#26FA87] hover:border-[#36FF8A] border-solid border rounded-2 g2 hover:shadow-white hover:shadow-lg hover:shadow-op-1 hover:shadow transition-shadow hover:transition-shadow"
+      >
+        <span class="color-white mb-10">Ingresa a nuestra comunidad en</span>
+        <Image src={discordIso} class="w-24 mb-10" alt="discord-iso" />
+        <Image src={discordLogo} class="w-42" alt="discord-logo" />
+      </div>
+    </a>
+  </main>
 </MainLayout>
+<style>
+  * {
+    @apply font-sans;
+  }
+
+  body {
+    background-color: #010f1a;
+  }
+
+  .g1 {
+    background: rgb(5, 35, 23);
+    background: linear-gradient(
+      90deg,
+      rgba(5, 35, 23, 0.14) 0%,
+      rgba(53, 130, 57, 0.1) 27%,
+      rgba(7, 55, 30, 0.18) 74%,
+      rgba(38, 212, 122, 0) 100%
+    );
+  }
+
+  .g2 {
+    background: rgb(17, 64, 38);
+    background: linear-gradient(
+      148deg,
+      rgba(17, 64, 38, 0.05) 24%,
+      rgba(0, 79, 35, 0.1) 56%,
+      rgba(38, 212, 122, 0) 100%
+    );
+  }
+
+  .g2:hover {
+    background: rgb(17, 64, 38);
+    background: linear-gradient(
+      148deg,
+      rgba(17, 64, 38, 0.1) 24%,
+      rgba(0, 79, 35, 0.2) 56%,
+      rgba(38, 212, 122, 0.1) 100%
+    );
+  }
+</style>
