@@ -1,12 +1,68 @@
 ---
-title: How to use the blog
+title: Graficando datos de forma sencilla con Streamlit.
 image: ./images/featured.jpg
+author: Rodrigo Carranza
 tags:
-  - a
-  - b
+  - python
+  - streamlit
+intro: Streamlit es una herramienta de código abierto que se ha vuelto cada vez más popular en el mundo de la ciencia de datos y la visualización de datos. Permite a los desarrolladores crear aplicaciones web interactivas de manera sencilla y eficiente. En este artículo, exploraremos cómo usar Streamlit para graficar datos de forma sencilla y efectiva.
 draft: false
 ---
 
-# Blog
+## Introducción a Streamlit
 
-asdas
+Streamlit es una biblioteca de Python que se utiliza para crear aplicaciones web con un mínimo esfuerzo de desarrollo. Lo que hace que Streamlit sea único es su capacidad para convertir scripts de Python en aplicaciones web interactivas con solo unas pocas líneas de código. Es ampliamente utilizado en el ámbito de la ciencia de datos y la visualización de datos debido a su facilidad de uso y su capacidad para integrarse con bibliotecas populares como Pandas, Matplotlib y Plotly.
+
+## Configuración de Streamlit
+
+Para comenzar a utilizar Streamlit, primero debes asegurarte de tenerlo instalado en tu entorno de desarrollo de Python. Puedes instalarlo utilizando pip:
+
+```python
+pip install streamlit
+```
+
+Una vez que Streamlit esté instalado, puedes crear una aplicación web simple ejecutando el siguiente comando en tu terminal:
+
+```python
+streamlit hello
+```
+
+Esto abrirá una ventana del navegador con una aplicación web de ejemplo que puedes utilizar como punto de partida para tu proyecto.
+
+## Creación de una aplicación de graficación de datos
+
+Ahora que tienes una idea básica de cómo funciona Streamlit, veamos cómo puedes crear una aplicación para graficar datos de forma sencilla. Supongamos que tienes un conjunto de datos que deseas visualizar en un gráfico.
+
+1. **Importa las bibliotecas necesarias**: Asegúrate de importar las bibliotecas de Python que necesitas para cargar y procesar tus datos, como Pandas para la manipulación de datos y Matplotlib o Plotly para la creación de gráficos.
+
+2. **Carga tus datos**: Utiliza Pandas u otra biblioteca para cargar tus datos desde una fuente, como un archivo CSV o una base de datos.
+
+3. **Crea tus gráficos**: Utiliza las bibliotecas de visualización de datos para crear tus gráficos.
+
+4. **Utiliza Streamlit para mostrar los gráficos**: Ahora es donde Streamlit entra en juego. Puedes utilizar comandos de Streamlit para mostrar tus gráficos en la aplicación web.
+
+Aquí tienes un ejemplo simple de cómo mostrar un gráfico de barras utilizando Streamlit:
+
+```python
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Cargar datos
+data = pd.read_csv('tus_datos.csv')
+
+# Crear un gráfico de barras
+fig, ax = plt.subplots()
+ax.bar(data['Categoría'], data['Valor'])
+st.pyplot(fig)
+```
+
+Al ejecutar esta aplicación con Streamlit, verás un gráfico de barras en tu navegador con los datos de tu conjunto de datos.
+
+## Personalización de tu aplicación
+
+Streamlit te permite personalizar tu aplicación de muchas maneras. Puedes agregar controles deslizantes, botones y otros elementos interactivos para permitir a los usuarios explorar tus datos de manera más efectiva. También puedes ajustar el estilo y la apariencia de tu aplicación para que se adapte a tus necesidades.
+
+## Conclusión
+
+Streamlit es una herramienta poderosa que hace que la creación de aplicaciones web para la visualización de datos sea fácil y rápida. En este artículo, hemos visto cómo empezar con Streamlit y cómo crear una aplicación simple para graficar datos. Con su facilidad de uso y su capacidad de integración con bibliotecas populares de Python, Streamlit es una excelente opción para cualquier persona que quiera compartir datos de manera interactiva en la web. ¡Empieza a utilizar Streamlit y lleva tus visualizaciones de datos al siguiente nivel!
