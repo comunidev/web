@@ -9,5 +9,11 @@ export default defineConfig({
   integrations: [UnoCSS({
     injectReset: true,
     extractors: []
-  }), solidJs(), mdx()]
+  }), solidJs(), mdx()],
+  markdown: {
+    shikiConfig: {
+      theme: "github-dark",
+      wrap: true
+    },
+  }
 });

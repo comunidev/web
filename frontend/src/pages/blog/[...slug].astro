@@ -2,7 +2,8 @@
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import MainLayout from "../../layout/main.astro";
-import comunidevBlogLogo from '../../images/logo-blog.svg'
+import comunidevBlogLogo from "../../images/logo-blog.svg";
+import DiscordBanner from "../../components/DiscordBanner.astro";
 
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
@@ -15,6 +16,19 @@ export async function getStaticPaths() {
 // 2. For your template, you can get the entry directly from the prop
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const textColors = [
+  "text-accent-yellow",
+  "text-accent-lime",
+  "text-accent-cyan",
+  "text-accent-pink",
+];
+const borderColors = [
+  "border-accent-yellow",
+  "border-accent-lime",
+  "border-accent-cyan",
+  "border-accent-pink",
+];
 ---
 
 <html lang="en">
@@ -25,19 +39,57 @@ const { Content } = await entry.render();
     <meta name="generator" content={Astro.generator} />
     <title>{entry.data.title}</title>
   </head>
-  <body class="bg-brand-bg flex justify-end mr-42">
+  <body class="bg-brand-bg flex justify-end xxl:mr-42">
     <div class="post w-6xl pl-36 flex flex-col items-start">
       <div class="w-4xl pr-16 relative pb-24 pt-12">
-        <div class="absolute top-0 -left-48 w-1 border-l-brand-primary h-full border-l-2"></div>
-        <div class="absolute top-0 right-0 w-1 border-r-brand-primary h-90% border-r-2"></div>
-        <Image src={entry.data.image} alt={entry.data.title} class="absolute max-h-md border-brand-primary border-2 left-[-110%]"/>
-        <Image src={comunidevBlogLogo} alt="blog-logo" class="mb-12 w-64"/>
-        <h1 class="text-brand-primary text-6xl mb-6 drop-shadow drop-shadow-color-brand-primary drop-shadow-color-op-20 drop-shadow-lg">{entry.data.title}</h1>
+        <div
+          class="absolute top-0 -left-48 w-1 border-l-brand-primary h-full border-l-2"
+        >
+        </div>
+        <div
+          class="absolute top-0 right-0 w-1 border-r-brand-primary h-90% border-r-2"
+        >
+        </div>
+        <div class="absolute left-0 h-full w-full">
+          <div
+            class="absolute left-[-110%] h-full w-full flex flex-col items-end"
+          >
+            <Image
+              src={entry.data.image}
+              alt={entry.data.title}
+              class="border-brand-primary border-2 max-h-md mb-24"
+            />
+            <a
+              href="https://discord.gg/rsBNkmJA"
+              class="hover:brightness-140 hover:grayscale-20 hover:saturate-150 transition-filter"
+            >
+              <DiscordBanner />
+            </a>
+          </div>
+        </div>
+        <Image src={comunidevBlogLogo} alt="blog-logo" class="mb-12 w-64" />
+        <h1
+          class="text-brand-primary text-6xl mb-6 drop-shadow drop-shadow-color-brand-primary drop-shadow-color-op-20 drop-shadow-lg"
+        >
+          {entry.data.title}
+        </h1>
         <div class="flex flex-row gap-2 mb-10">
           {
-            entry.data.tags.map(tag => <div class="text-amber text-sm inline-block pt-0.5 py-1 px-2 border border-amber">{tag}</div>)
+            entry.data.tags.map((tag, i) => (
+              <div
+                class={`${
+                  textColors[i % 4]
+                } text-sm inline-block pt-0.5 py-1 px-2 border ${
+                  borderColors[i % 4]
+                }`}
+              >
+                {tag}
+              </div>
+            ))
           }
-          <span class="text-white italic text-sm"><span class="mx-2">|</span> por {entry.data.author}</span>
+          <span class="text-white italic text-sm"
+            ><span class="mx-2">|</span> por {entry.data.author}</span
+          >
         </div>
         <div class="intro text-white pl-8 pr-32 leading-8 italic font-400">
           {entry.data.intro}
@@ -50,13 +102,22 @@ const { Content } = await entry.render();
 
     <style is:global>
       .post h2 {
-        --uno: text-4xl text-brand-secondary font-400 mb-4 mt-8;
+        --uno: text-4xl text-brand-secondary font-400 mb-4 mt-8
+          drop-shadow-color-brand-secondary drop-shadow-color-op-10
+          drop-shadow-lg;
+      }
+
+      .post .astro-code {
+        --uno: text-sm p-8;
       }
 
       .post p {
-        @apply text-white;
+        @apply text-white mb-8 mt-4;
+      }
+
+      .post strong {
+        @apply text-brand-primary;
       }
     </style>
   </body>
-
 </html>
