@@ -17,18 +17,12 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const textColors = [
-  "text-accent-yellow",
-  "text-accent-lime",
-  "text-accent-cyan",
-  "text-accent-pink",
-];
-const borderColors = [
-  "border-accent-yellow",
-  "border-accent-lime",
-  "border-accent-cyan",
-  "border-accent-pink",
-];
+const tagClasslist = (i) => ({
+  "text-accent-yellow border-accent-yellow": i === 0,
+  "text-accent-lime border-accent-lime": i === 1,
+  "text-accent-cyan border-accent-cyan": i === 2,
+  "text-accent-pink border-accent-pink": i === 3,
+});
 ---
 
 <html lang="en">
@@ -39,84 +33,120 @@ const borderColors = [
     <meta name="generator" content={Astro.generator} />
     <title>{entry.data.title}</title>
   </head>
-  <body class="bg-brand-bg flex justify-end xxl:mr-42">
-    <div class="post w-6xl pl-36 flex flex-col items-start">
-      <div class="w-4xl pr-16 relative pb-24 pt-12">
-        <div
-          class="absolute top-0 -left-48 w-1 border-l-brand-primary h-full border-l-2"
-        >
-        </div>
-        <div
-          class="absolute top-0 right-0 w-1 border-r-brand-primary h-90% border-r-2"
-        >
-        </div>
-        <div class="absolute left-0 h-full w-full">
-          <div
-            class="absolute left-[-110%] h-full w-full flex flex-col items-end"
-          >
+  <body>
+    <div class="post">
+      <div class="post-header">
+        <div class="left-line"></div>
+        <div class="left-sidebar-positioner">
+          <div class="left-sidebar">
             <Image
               src={entry.data.image}
               alt={entry.data.title}
-              class="border-brand-primary border-2 max-h-md mb-24"
+              class="featured-image"
             />
-            <a
-              href="https://discord.gg/rsBNkmJA"
-              class="hover:brightness-160 hover:grayscale-20 hover:saturate-150 transition-filter transition-duration-400 ease-in-out"
-            >
-              <DiscordBanner />
-            </a>
+            <DiscordBanner />
           </div>
         </div>
         <Image src={comunidevBlogLogo} alt="blog-logo" class="mb-12 w-64" />
-        <h1
-          class="text-brand-primary text-6xl mb-6 drop-shadow drop-shadow-color-brand-primary drop-shadow-color-op-20 drop-shadow-lg"
-        >
+        <h1>
           {entry.data.title}
         </h1>
-        <div class="flex flex-row gap-2 mb-10">
+        <div class="tags">
           {
             entry.data.tags.map((tag, i) => (
-              <div
-                class={`${
-                  textColors[i % 4]
-                } text-sm inline-block pt-0.5 py-1 px-2 border ${
-                  borderColors[i % 4]
-                }`}
-              >
+              <div class="tag" class:list={tagClasslist(i)}>
                 {tag}
               </div>
             ))
           }
-          <span class="text-white italic text-sm"
-            ><span class="mx-2">|</span> por {entry.data.author}</span
-          >
+          <span class="author"><mx-2>|</mx-2> por {entry.data.author}</span>
         </div>
-        <div class="intro text-white pl-8 pr-32 leading-8 italic font-400">
+        <div class="intro">
           {entry.data.intro}
         </div>
       </div>
-      <div class="w-3xl -ml-6 relative pb-24 -mt-16 leading-8">
+      <div class="content">
         <Content />
       </div>
     </div>
 
+    <style>
+      body {
+        --uno: bg-brand-bg flex justify-end xxl: mr-42;
+      }
+
+      h1 {
+        --uno: text-brand-primary text-6xl mb-6 drop-shadow
+          drop-shadow-color-brand-primary drop-shadow-color-op-20 drop-shadow-lg;
+      }
+
+      .left-sidebar-positioner {
+        --uno: absolute left-0 h-full w-full;
+      }
+      .left-sidebar {
+        --uno: absolute h-full w-full flex flex-col items-end left-[-110%];
+      }
+
+      .featured-image {
+        --uno: border-brand-primary border-2 max-h-md mb-24;
+      }
+
+      .post-header::before {
+        content: " ";
+        --uno: absolute top-0 -left-48 w-1 border-l-brand-primary h-full border-l-2;
+      }
+
+      .post-header::after {
+        content: " ";
+        --uno: absolute top-0 right-0 w-1 border-r-brand-primary h-90%
+          border-r-2;
+      }
+
+      .post {
+        --uno: w-6xl pl-36 flex flex-col items-start relative;
+      }
+
+      .post-header {
+        --uno: w-4xl pr-16 relative pb-24 pt-12;
+
+        & .intro {
+          --uno: text-white pl-8 pr-32 leading-8 italic font-400;
+        }
+
+        & .tags {
+          --uno: flex flex-row gap-2 mb-10;
+          & .tag {
+            --uno: text-sm inline-block pt-0.5 py-1 px-2 border;
+          }
+        }
+      }
+
+      .content {
+        --uno: w-3xl -ml-6 relative pb-24 -mt-16 leading-8;
+      }
+
+      .author {
+        --uno: text-white italic text-sm;
+      }
+    </style>
     <style is:global>
-      .post h2 {
-        --uno: text-4xl text-brand-secondary font-400 mb-4 mt-8
-          drop-shadow-color-brand-secondary drop-shadow-color-op-10
-          drop-shadow-lg;
-      }
+      .content {
+        & h2 {
+          --uno: text-4xl text-brand-secondary font-400 mb-4 mt-8
+            drop-shadow-(color-brand-secondary color-op-10 lg);
+        }
 
-      .post .astro-code {
-        --uno: text-sm p-8;
-      }
+        & .astro-code {
+          --uno: text-sm p-8;
+        }
 
-      .post p {
-        @apply text-white mb-8 mt-4;
-      }
+        & p {
+          --uno: text-white mb-8 mt-4;
+        }
 
-      .post strong {
-        @apply text-brand-primary;
+        & strong {
+          --uno: text-brand-primary;
+        }
       }
     </style>
   </body>

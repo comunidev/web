@@ -18,9 +18,8 @@ const { title, page } = Astro.props;
     <title>{title}</title>
   </head>
 
-  <body class="h-100vh w-full flex flex-col items-center ">
+  <body class="h-100vh w-full flex flex-col items-center">
     <div class="flex flex-col items-center w-full h-full xl:max-w-7xl">
-
       <header class="pt-18 pl-16 pr-16 w-full">
         <div class="w-52 mb-6 pl-4">
           <Image src={logoWeb} alt="logoWeb" />
@@ -28,7 +27,9 @@ const { title, page } = Astro.props;
         <nav class="border-[#26FA87] border-solid border rounded-1 g1">
           <ul class="flex flex-row p-4 color-white text-md">
             <li class="ml-2 mr-8">
-              <a href="/" style={{ color: page == "home" ? "#26FA87" : "white" }}
+              <a
+                href="/"
+                style={{ color: page == "home" ? "#26FA87" : "white" }}
                 >inicio</a
               >
             </li>

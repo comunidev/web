@@ -1,12 +1,12 @@
 // uno.config.ts
-import { defineConfig, presetUno, presetWebFonts, transformerDirectives } from "unocss"
+import { defineConfig, presetUno, presetTagify, presetWebFonts, transformerDirectives, presetAttributify, transformerVariantGroup, transformerAttributifyJsx } from "unocss"
 import presetRemToPx from '@unocss/preset-rem-to-px'
 
 export default defineConfig({
   content: {
     filesystem: ["**/*.{html,js,ts,jsx,tsx,vue,astro}"],
   },
-  presets: [presetRemToPx(), presetUno(), presetWebFonts({
+  presets: [presetTagify(), presetAttributify(), presetRemToPx(), presetUno(), presetWebFonts({
     provider: 'google',
     fonts: {
       sans: 'Fira Sans',
@@ -26,5 +26,5 @@ export default defineConfig({
       "accent-pink": "#EE4EE7",
     }
   },
-  transformers: [transformerDirectives()]
+  transformers: [transformerDirectives(), transformerAttributifyJsx(), transformerVariantGroup()]
 })

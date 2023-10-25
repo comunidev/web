@@ -4,16 +4,49 @@ import discordFull from "../images/discord-full.svg";
 import discordBannerBackground from "../images/discord-banner-background.png";
 ---
 
-<div class="border-brand-primary border-2 discord-banner w-sm min-h-sm relative">
-  <div class="absolute h-full top-6 text-center px-8 flex flex-col items-center justify-center">
-    <div>
-      <div class="text-8  text-white font-300 italic leading-10 mb-6">La nueva comunidad de desarrollo en español</div>
-      <button class="bg-brand-primary py-2 px-6 border-[#008254] border-2 font-700">¡Únete ahora!</button>
+<a class="link" href="https://discord.gg/rsBNkmJA">
+  <div class="main-container">
+    <div class="inset-container">
+      <div>
+        <div class="copy">La nueva comunidad de desarrollo en español</div>
+        <button>¡Únete ahora!</button>
+      </div>
+      <div mt-8>
+        <div font-600 text-white italic>por</div>
+        <Image src={discordFull} alt="discord-full" mt-2 />
+      </div>
     </div>
-    <div class="mt-8">
-      <div class="font-600 text-white italic">por</div>
-      <Image src={discordFull} alt="discord-full" class="mt-2"/>
-    </div>
+    <Image
+      class="background"
+      src={discordBannerBackground}
+      alt="discord-banner"
+    />
   </div>
-  <Image src={discordBannerBackground} alt="discord-banner" class="absolute left-0 top-0 -z-1"/>
-</div>
+</a>
+<style>
+  .link {
+    --uno: hover: (brightness-160 grayscale-20 saturate-150)
+      transition-(filter duration-400) ease-in-out;
+  }
+
+  .main-container {
+    --uno: border-(brand-primary 2) discord-banner w-sm min-h-sm relative;
+  }
+
+  .inset-container {
+    --uno: absolute h-full top-6 text-center px-8 flex flex-col items-center
+      justify-center;
+
+    & .copy {
+      --uno: text-8 text-white font-300 italic leading-10 mb-6;
+    }
+
+    & button {
+      --uno: bg-brand-primary py-2 px-6 border-[#008254] border-2 font-700;
+    }
+  }
+
+  .background {
+    --uno: absolute left-0 top-0 -z-1;
+  }
+</style>
