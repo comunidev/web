@@ -1,0 +1,80 @@
+---
+title: Instalación de Linux en Windows con WSL 
+image: ./images/featured.jpg
+author: Roberto Gonzalez
+tags:
+  - linux
+  - wsl2
+  - windows
+intro: En este artículo, exploraremos cómo instalar y utilizar Linux en un entorno Windows mediante WSL. Descubre cómo esta poderosa herramienta te permite disfrutar de lo mejor de ambos mundos, aprovechando las ventajas de Linux sin dejar atrás la comodidad de tu sistema operativo Windows.
+draft: false
+---
+
+## Instlación de WSL2
+1.**Habilitación de WSL**
+
+Si eres desarrollador y usas el sistema operativo Windows, te recomendamos instalar Windows Subsystem for Linux, mejor conocido como WSL o WSL2. 
+Ejecute el siguiente comando:
+
+```bash
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
+
+2.**Habilitación de Virtualización**
+
+Antes de instalar WSL2, debemos habilitar las características de virtualización de nuestra computadora, para esto debes abrir nuevamente tu terminal y debes ejecutar el siguiente comando:
+
+```bash
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
+
+2.**Instalación de WSL2*
+
+Abra Powershell como administrador, y ejecutar el siguiente comando. 
+
+```bash
+wsl --install
+```
+
+
+
+Esto abrirá una ventana del navegador con una aplicación web de ejemplo que puedes utilizar como punto de partida para tu proyecto.
+
+## Creación de una aplicación de graficación de datos
+
+Ahora que tienes una idea básica de cómo funciona Streamlit, veamos cómo puedes crear una aplicación para graficar datos de forma sencilla. Supongamos que tienes un conjunto de datos que deseas visualizar en un gráfico.
+
+1. **Importa las bibliotecas necesarias**: Asegúrate de importar las bibliotecas de Python que necesitas para cargar y procesar tus datos, como Pandas para la manipulación de datos y Matplotlib o Plotly para la creación de gráficos.
+
+2. **Carga tus datos**: Utiliza Pandas u otra biblioteca para cargar tus datos desde una fuente, como un archivo CSV o una base de datos.
+
+3. **Crea tus gráficos**: Utiliza las bibliotecas de visualización de datos para crear tus gráficos.
+
+4. **Utiliza Streamlit para mostrar los gráficos**: Ahora es donde Streamlit entra en juego. Puedes utilizar comandos de Streamlit para mostrar tus gráficos en la aplicación web.
+
+Aquí tienes un ejemplo simple de cómo mostrar un gráfico de barras utilizando Streamlit:
+
+```python
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Cargar datos
+data = pd.read_csv('tus_datos.csv')
+
+# Crear un gráfico de barras
+fig, ax = plt.subplots()
+ax.bar(data['Categoría'], data['Valor'])
+st.pyplot(fig)
+```
+
+Al ejecutar esta aplicación con Streamlit, verás un gráfico de barras en tu navegador con los datos de tu conjunto de datos.
+
+## Personalización de tu aplicación
+
+Streamlit te permite personalizar tu aplicación de muchas maneras. Puedes agregar controles deslizantes, botones y otros elementos interactivos para permitir a los usuarios explorar tus datos de manera más efectiva. También puedes ajustar el estilo y la apariencia de tu aplicación para que se adapte a tus necesidades.
+
+## Conclusión
+
+Streamlit es una herramienta poderosa que hace que la creación de aplicaciones web para la visualización de datos sea fácil y rápida. En este artículo, hemos visto cómo empezar con Streamlit y cómo crear una aplicación simple para graficar datos. Con su facilidad de uso y su capacidad de integración con bibliotecas populares de Python, Streamlit es una excelente opción para cualquier persona que quiera compartir datos de manera interactiva en la web. ¡Empieza a utilizar Streamlit y lleva tus visualizaciones de datos al siguiente nivel!
