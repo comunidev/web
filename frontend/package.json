@@ -8,7 +8,7 @@
   "scripts": {
     "prepare": "panda codegen",
     "start": "astro dev",
-    "dev": "chii start -p 8080 & astro dev",
+    "dev": "astro dev",
     "build": "astro build",
     "serve": "astro preview",
     "astro": "astro"
