@@ -26,7 +26,7 @@ export default defineConfig({
           "brand-primary": { value: "#1AD56C" },
           "brand-secondary": { value: "#E6F36E" },
           "accent-yellow": { value: "#E7EE4E" },
-          "accent-lime": { value: "#4EEE7E" },
+          "accent-lime": { value: "#A9FF4B" },
           "accent-cyan": { value: "#4EE7EE" },
           "accent-pink": { value: "#EE4EE7" },
         },

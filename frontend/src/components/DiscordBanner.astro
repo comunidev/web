@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import discordFull from "../images/discord-full.svg";
 import discordBannerBackground from "../images/discord-banner-background.png";
 import { css } from "../../styled-system/css";
+import "@fontsource/fira-sans/700.css";
 import "@fontsource/fira-sans/600-italic.css";
 import "@fontsource/fira-sans/400.css";
 import "@fontsource/fira-sans/300-italic.css";
@@ -47,6 +48,11 @@ const styles = {
     border: "2px solid #008254",
     fontWeight: "700",
   }),
+  smallText: css({
+    fontWeight: "600",
+    color: "white",
+    fontStyle: "italic",
+  }),
   background: css({
     position: "absolute",
     left: "0",
@@ -66,15 +72,7 @@ const styles = {
         <button class={styles.button}>¡Únete ahora!</button>
       </div>
       <div class={css({ mt: "8" })}>
-        <div
-          class={css({
-            fontWeight: "600",
-            color: "white",
-            fontStyle: "italic",
-          })}
-        >
-          por
-        </div>
+        <div class={styles.smallText}>por</div>
         <Image src={discordFull} alt="discord-full" class={css({ mt: "2" })} />
       </div>
     </div>

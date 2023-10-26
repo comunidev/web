@@ -47,13 +47,14 @@ const styles = {
     lineHeight: "tight",
     fontSize: "5xl",
     mb: "6",
-    textShadow: "0 0 token(sizes.1) token(colors.brand-primary)",
+    textShadow: "0 0 token(sizes.lg) token(colors.brand-primary)",
   }),
   body: css({
     display: "flex",
-    justifyContent: "flex-end",
+    flexDirection: "column",
+    alignItems: "end",
     xl: {
-      mr: "40",
+      mr: "2%",
     },
     backgroundColor: "brand-bg",
   }),
@@ -61,32 +62,43 @@ const styles = {
     position: "relative",
     display: "flex",
     flexDirection: "column",
-    alignItems: "start",
+    alignItems: "center",
     w: "full",
-    px: "8",
+    px: "2",
     xl: {
-      pl: "36",
-      w: "6xl",
+      pt: "0",
+      w: "4xl",
     },
   }),
   postHeader: css({
+    borderTop: "2px solid",
+    borderColor: "brand-primary",
+    mt: "2",
     xl: {
-      w: "4xl",
+      mt: "0",
+      borderTop: "none",
+      pt: "12",
     },
-    w: "full",
-    pr: "16",
+    lg: {
+      pt: "24",
+      pl: "36",
+      pr: "16",
+    },
+    pt: "8",
     position: "relative",
-    pb: "24",
-    pt: "12",
+    px: "8",
+    w: "full",
+    pb: "12",
+
     _before: {
       content: '" "',
       position: "absolute",
       top: "0",
-      left: "-48",
+      left: "0",
       borderLeftColor: "brand-primary",
       borderLeftWidth: "2px",
       w: "1",
-      h: "full",
+      h: "94%",
       zIndex: "-2",
     },
     _after: {
@@ -97,21 +109,53 @@ const styles = {
       borderRightColor: "brand-primary",
       borderRightWidth: "2px",
       w: "1",
-      h: "90%",
+      h: "110%",
       zIndex: "-10",
     },
     zIndex: "2",
   }),
-  intro: css({
-    color: "white",
-    px: "8",
-    lineHeight: "1.8",
-    fontStyle: "italic",
-    fontWeight: "400",
+  blogLogo: css({
+    w: "64",
+    mb: "8",
+  }),
+  leftSidebarPositioner: css({
+    display: "none",
     xl: {
-      pr: "32",
+      display: "initial",
+      position: "absolute",
+      left: "0",
+      h: "full",
+      w: "full",
+      zIndex: "-1",
     },
   }),
+  leftSidebar: css({
+    position: "absolute",
+    h: "full",
+    w: "full",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "end",
+    left: "-94%",
+  }),
+  sidebarFeaturedImage: css({
+    border: "2px solid",
+    borderColor: "brand-primary",
+    w: "auto",
+    maxH: "md",
+    mb: "24",
+  }),
+  featuredImage: css({
+    xl: {
+      display: "none",
+    },
+    border: "2px solid",
+    borderColor: "brand-primary",
+    mb: "8",
+    w: "auto",
+    maxH: "md",
+  }),
+
   tags: css({
     display: "flex",
     flexDirection: "row",
@@ -135,48 +179,48 @@ const styles = {
     color: "white",
     fontStyle: "italic",
     fontSize: "sm",
+    whiteSpace: "nowrap",
   }),
-  featuredImage: css({
-    border: "2px solid",
-    borderColor: "brand-primary",
-    maxH: "md",
-    mb: "24",
+  intro: css({
+    color: "white",
+    px: "8",
+    lineHeight: "1.8",
+    fontStyle: "italic",
+    fontWeight: "400",
+    xl: {
+      pr: "32",
+    },
   }),
-  leftSidebarPositioner: css({
-    position: "absolute",
-    left: "0",
-    h: "full",
-    w: "full",
-    zIndex: "-1",
-  }),
-  leftSidebar: css({
-    position: "absolute",
-    h: "full",
-    w: "full",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "end",
-    left: "-110%",
+  inPostDiscordBanner: css({
+    mb: "12",
+    xl: {
+      display: "none",
+    },
   }),
   content: css({
     xl: {
       w: "3xl",
-      ml: "-6",
+      pl: "14",
     },
+    lg: {
+      px: "32",
+    },
+    sm: {
+      px: "16",
+    },
+    px: "8",
     w: "full",
     position: "relative",
-    pb: "24",
-    mt: "-16",
     lineHeight: "2",
 
     "& h2": {
       fontSize: "4xl",
       color: "brand-secondary",
       fontWeight: "400",
+      lineHeight: "snug",
       mb: "4",
-      mt: "8",
       backdropOpacity: "10",
-      textShadow: "0 0 token(sizes.1) token(colors.brand-secondary)",
+      textShadow: "0 0 token(sizes.lg) token(colors.brand-secondary)",
     },
 
     "& .astro-code": {
@@ -209,23 +253,26 @@ const styles = {
   <body class={styles.body}>
     <div class={styles.post}>
       <div class={styles.postHeader}>
+        <Image
+          src={comunidevBlogLogo}
+          alt="blog-logo"
+          class={styles.blogLogo}
+        />
         <div class={styles.leftSidebarPositioner}>
           <div class={styles.leftSidebar}>
             <Image
               src={entry.data.image}
               alt={entry.data.title}
-              class={styles.featuredImage}
+              class={styles.sidebarFeaturedImage}
             />
             <DiscordBanner />
           </div>
         </div>
+
         <Image
-          src={comunidevBlogLogo}
-          alt="blog-logo"
-          class={css({
-            mb: "12",
-            w: "64",
-          })}
+          src={entry.data.image}
+          alt={entry.data.title}
+          class={styles.featuredImage}
         />
         <h1 class={styles.h1}>
           {entry.data.title}
@@ -245,6 +292,9 @@ const styles = {
         <div class={styles.intro}>
           {entry.data.intro}
         </div>
+      </div>
+      <div class={styles.inPostDiscordBanner}>
+        <DiscordBanner />
       </div>
       <div class={styles.content}>
         <Content />
