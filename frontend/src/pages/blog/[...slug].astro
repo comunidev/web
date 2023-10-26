@@ -149,11 +149,10 @@ const styles = {
     xl: {
       display: "none",
     },
+    w: "full",
     border: "2px solid",
     borderColor: "brand-primary",
     mb: "8",
-    w: "auto",
-    maxH: "md",
   }),
 
   tags: css({
@@ -264,6 +263,7 @@ const styles = {
               src={entry.data.image}
               alt={entry.data.title}
               class={styles.sidebarFeaturedImage}
+              height={420}
             />
             <DiscordBanner />
           </div>
@@ -273,6 +273,7 @@ const styles = {
           src={entry.data.image}
           alt={entry.data.title}
           class={styles.featuredImage}
+          width={930}
         />
         <h1 class={styles.h1}>
           {entry.data.title}
