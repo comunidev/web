@@ -19,5 +19,9 @@
     "isolatedModules": true,
     "allowJs": true
   },
-  "extends": "astro/tsconfigs/base"
+  "extends": "astro/tsconfigs/base",
+  "include": [
+    "src",
+    "styled-system"
+  ]
 }

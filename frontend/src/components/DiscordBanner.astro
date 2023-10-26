@@ -2,51 +2,83 @@
 import { Image } from "astro:assets";
 import discordFull from "../images/discord-full.svg";
 import discordBannerBackground from "../images/discord-banner-background.png";
+import { css } from "../../styled-system/css";
+
+const styles = {
+  link: css({
+    _hover: {
+      filter: "brightness(160%) grayscale(20%) saturate(150%)",
+      transition: "filter 400ms ease-in-out",
+    },
+  }),
+  mainContainer: css({
+    border: "2px solid",
+    borderColor: "brand-primary",
+    w: "sm",
+    minH: "sm",
+    position: "relative",
+  }),
+  insetContainer: css({
+    position: "absolute",
+    h: "full",
+    top: "6",
+    textAlign: "center",
+    px: "12",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  }),
+  copy: css({
+    fontSize: "3xl",
+    color: "white",
+    fontWeight: "300",
+    fontStyle: "italic",
+    lineHeight: "snug",
+    mb: "6",
+  }),
+  button: css({
+    backgroundColor: "brand-primary",
+    py: "2",
+    px: "6",
+    border: "2px solid #008254",
+    fontWeight: "700",
+  }),
+  background: css({
+    position: "absolute",
+    left: "0",
+    top: "0",
+    zIndex: "1",
+  }),
+};
 ---
 
-<a class="link" href="https://discord.gg/rsBNkmJA">
-  <div class="main-container">
-    <div class="inset-container">
+<a class={styles.link} href="https://discord.gg/rsBNkmJA">
+  <div class={styles.mainContainer}>
+    <div class={styles.insetContainer}>
       <div>
-        <div class="copy">La nueva comunidad de desarrollo en español</div>
-        <button>¡Únete ahora!</button>
+        <div class={styles.copy}>
+          La nueva comunidad de desarrollo en español
+        </div>
+        <button class={styles.button}>¡Únete ahora!</button>
       </div>
-      <div mt-8>
-        <div font-600 text-white italic>por</div>
-        <Image src={discordFull} alt="discord-full" mt-2 />
+      <div class={css({ mt: "8" })}>
+        <div
+          class={css({
+            fontWeight: "600",
+            color: "white",
+            fontStyle: "italic",
+          })}
+        >
+          por
+        </div>
+        <Image src={discordFull} alt="discord-full" class={css({ mt: "2" })} />
       </div>
     </div>
     <Image
-      class="background"
+      class={styles.background}
       src={discordBannerBackground}
       alt="discord-banner"
     />
   </div>
 </a>
-<style>
-  .link {
-    --uno: hover: (brightness-160 grayscale-20 saturate-150)
-      transition-(filter duration-400) ease-in-out;
-  }
-
-  .main-container {
-    --uno: border-(brand-primary 2) discord-banner w-sm min-h-sm relative;
-  }
-
-  .inset-container {
-    --uno: absolute h-full top-6 text-center px-8 flex flex-col items-center
-      justify-center;
-
-    & .copy {
-      --uno: text-8 text-white font-300 italic leading-10 mb-6;
-    }
-
-    & button {
-      --uno: bg-brand-primary py-2 px-6 border-[#008254] border-2 font-700;
-    }
-  }
-
-  .background {
-    --uno: absolute left-0 top-0 -z-1;
-  }
-</style>
