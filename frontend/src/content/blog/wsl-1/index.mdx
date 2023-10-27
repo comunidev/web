@@ -1,6 +1,7 @@
 ---
-title: Instalación de Linux en Windows con WSL 
-image: ./images/featured.jpg
+title: Instalación de Linux en Windows con WSL
+slug: /blog/instalacion-de-linux-en-windows-con-wsl
+image: ./images/wsl.jpg
 author: Roberto Gonzalez
 tags:
   - linux
@@ -11,9 +12,10 @@ draft: false
 ---
 
 ## Instalación de WSL2
+
 **1.Habilitación de WSL**
 
-Si eres desarrollador y usas el sistema operativo Windows, te recomendamos instalar Windows Subsystem for Linux, mejor conocido como WSL o WSL2. 
+Si eres desarrollador y usas el sistema operativo Windows, te recomendamos instalar Windows Subsystem for Linux, mejor conocido como WSL o WSL2.
 Ejecute el siguiente comando:
 
 ```bash
@@ -28,10 +30,9 @@ Antes de instalar WSL2, debemos habilitar las características de virtualizació
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
-
 **3.Instalación de WSL2**
 
-Abra Powershell como administrador, y ejecutar el siguiente comando. 
+Abra Powershell como administrador, y ejecutar el siguiente comando.
 
 ```bash
 wsl --install
