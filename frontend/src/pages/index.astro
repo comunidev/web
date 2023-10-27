@@ -37,7 +37,20 @@ const styles = {
     bg: "brand-bg",
   }),
   mainContainer: css({
-    width: "5xl",
+    lg: {
+      width: "5xl",
+      flexWrap: "nowrap",
+      px: "4",
+    },
+    flexWrap: "wrap",
+    width: "full",
+    md: {
+      px: "24",
+    },
+    sm: {
+      px: "14",
+    },
+    px: "8",
     display: "flex",
     flexDirection: "row",
     minH: "100vh",
@@ -45,6 +58,14 @@ const styles = {
   }),
   column1: css({
     minH: "full",
+    lg: {
+      flex: "initial",
+      alignItems: "start",
+    },
+    flex: "1 0 auto",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   }),
   logoWeb: css({
     w: "64",
@@ -52,7 +73,10 @@ const styles = {
     pt: "10",
   }),
   column2: css({
-    flex: "1",
+    lg: {
+      flex: "1",
+    },
+    flex: "1 1 auto",
     minH: "full",
   }),
   h2: css({
