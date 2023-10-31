@@ -1,0 +1,50 @@
+---
+title: Instalación del manejador de paquetes PNPM
+slug: instalacion-de-pnpm
+image: ./images/pnpm.jpg
+author: Roberto Gonzalez
+tags:
+  - pnpm
+  - nodejs
+
+intro: En este tutorial, explicaremos cómo instalar el manejador de paquetes pnpm.Un manejador de paquetes rápido y eficiente.
+draft: false
+---
+
+## Instalar pnmp
+
+Antes de instalar pnpm debes tener instalado Node.js, para esto te recomendamos que sigas la guía de instalación de Node.js de nuestro blog: https://comunidev.com/blog/instalacion-de-linux-en-windows-con-wsl
+
+### 1.Verifique la versión de Node.js
+
+Pare verificar la versión de node ejecute el siguiente comando:
+
+```bash
+node --version
+```
+Verifique que su versión de node.js sea v16.13 o superior, sino tiene esa versión debe instalarlo, puede seguir nuestra guía de instalación para que instale la versión v16.13, ya que a partir de está versión viene incorporado Corepack para administrar los administradores de parquetes.
+
+
+### 2.Habilitación de Corepack
+
+Una vez instalado node, simplemente debe ejecutar este comando para habilitar corepack:
+
+```bash
+corepack enable
+```
+Y estó instalará por defecto pnpm. 
+
+
+### 3.Verifique la versión de pnpm
+
+Ahora solo queda verificar la instalación de pnpm, ejecutando el siguiente comando:
+
+```bash
+pnpm --version
+```
+
+
+
+## Conclusión
+
+En este tutorial, aprendimos cómo instalar pnpm en nuestro sistema. Para ello, necesitamos verificar que nuestra versión de Node.js sea v16.13 o superior. Una vez que tengamos Node.js instalado, luego habilitamos Corepack y a disfrutar de pnpm!
