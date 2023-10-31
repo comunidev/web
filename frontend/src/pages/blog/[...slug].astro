@@ -23,19 +23,19 @@ const tagClasslist = (i) => ({
   [css({
     color: "brand-primary",
     borderColor: "brand-primary",
-  })]: i === 0,
+  })]: i % 4 === 0,
   [css({
     color: "accent-lime",
     borderColor: "accent-lime",
-  })]: i === 1,
+  })]: i % 4 === 1,
   [css({
     color: "accent-cyan",
     borderColor: "accent-cyan",
-  })]: i === 2,
+  })]: i % 4 === 2,
   [css({
     color: "accent-pink",
     borderColor: "accent-pink",
-  })]: i === 3,
+  })]: i % 4 === 3,
 });
 
 const styles = {
@@ -217,6 +217,15 @@ const styles = {
 
     "& h2": {
       fontSize: "4xl",
+      color: "brand-primary",
+      fontWeight: "400",
+      lineHeight: "snug",
+      mb: "4",
+      backdropOpacity: "10",
+      textShadow: "0 0 token(sizes.lg) token(colors.brand-secondary)",
+    },
+    "& h3": {
+      fontSize: "3xl",
       color: "brand-secondary",
       fontWeight: "400",
       lineHeight: "snug",
@@ -224,21 +233,26 @@ const styles = {
       backdropOpacity: "10",
       textShadow: "0 0 token(sizes.lg) token(colors.brand-secondary)",
     },
-
     "& .astro-code": {
       fontSize: "sm",
       p: "8",
     },
-
     "& p": {
       fontSize: "md",
       color: "white",
       mb: "8",
       mt: "4",
     },
-
+    "& li": {
+      fontSize: "md",
+      color: "white",
+    },
     "& strong": {
-      color: "brand-primary",
+      color: "accent-lime",
+    },
+
+    "& iframe": {
+      w: "full",
     },
   }),
 };

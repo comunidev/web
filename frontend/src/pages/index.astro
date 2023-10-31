@@ -14,19 +14,19 @@ const tagClasslist = (i) => ({
   [css({
     color: "brand-primary",
     borderColor: "brand-primary",
-  })]: i === 0,
+  })]: i % 4 === 0,
   [css({
     color: "accent-lime",
     borderColor: "accent-lime",
-  })]: i === 1,
+  })]: i % 4 === 1,
   [css({
     color: "accent-cyan",
     borderColor: "accent-cyan",
-  })]: i === 2,
+  })]: i % 4 === 2,
   [css({
     color: "accent-pink",
     borderColor: "accent-pink",
-  })]: i === 3,
+  })]: i % 4 === 3,
 });
 
 const styles = {
