@@ -13,29 +13,31 @@ draft: false
 
 ## Instalar Node.js en sistemas linux
 
-Para instalar Node.js usaremos NVM. 
+Para instalar Node.js usaremos NVM.
 Nvm es un manejador de versiones de Node, lo necesitaremos para mantener múltiples versiones de Node en un mismo entorno de trabajo.
-Pueden encontrar la documentación oficial en este enlace: 
+Pueden encontrar la documentación oficial en este enlace:
 https://github.com/nvm-sh/nvm
 
 Para usar NVM solo es necesario seguir estos pasos:
 
 ### 1.Instale NVM(Node Version Manager)
 
-Para instalar NVM, se debe ejecutar el script de instalación de la página oficial de NVM en tu terminal.  Para esto utilizaremos el siguiente comando  cURL o Wget 
+Para instalar NVM, se debe ejecutar el script de instalación de la página oficial de NVM en tu terminal. Para esto utilizaremos el siguiente comando cURL o Wget
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 ```
+
                                 ó
 
 ```bash
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 ```
+
 Al ejecutar cualquiera de los comandos anteriores, se descarga un script y se ejecuta. El script clonará el repositorio nvm.
 Cierre su terminal y abrala nuevamente, antes de verificar la instalación.
 
-### 2.Verifique la instalación y versión de NVM 
+### 2.Verifique la instalación y versión de NVM
 
 Ejecute los siguientes comandos
 
@@ -47,15 +49,15 @@ command -v nvm
 nvm --version
 ```
 
-
 ### 3.Instale Node.js
 
-Ahora que NVM está instalado, puedes instalar una versión específica de Node.js. 
+Ahora que NVM está instalado, puedes instalar una versión específica de Node.js.
 Por ejemplo, para instalar la versión LTS (Soporte a Largo Plazo) de Node.js, utiliza el siguiente comando:
 
 ```bash
 nvm install --lts
 ```
+
 Al finalizar la instalación, NVM seleccionara automáticamente la versión LTS, como la versión actual de trabajo.
 
 ### 4.Verifique la versión instalada de Node.js
@@ -63,8 +65,9 @@ Al finalizar la instalación, NVM seleccionara automáticamente la versión LTS,
 ```bash
 node --version
 ```
+
 Con la verificación podemos asegurarnos que todo este instalado correctamente.
 
 ## Conclusión
 
-En conclusión, la instalación de Node.js a través de NVM (Node Version Manager) es esencial para mantener múltiples versiones de Node en un entorno de desarrollo. Al seguir estos pasos, garantizamos una gestión eficiente de versiones y la flexibilidad necesaria para trabajar en diferentes proyectos que puedan requerir distintas versiones de Node. 
+En conclusión, la instalación de Node.js a través de NVM (Node Version Manager) es esencial para mantener múltiples versiones de Node en un entorno de desarrollo. Al seguir estos pasos, garantizamos una gestión eficiente de versiones y la flexibilidad necesaria para trabajar en diferentes proyectos que puedan requerir distintas versiones de Node.
