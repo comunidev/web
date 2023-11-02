@@ -25,10 +25,10 @@
     "socket.io-client": "^4.7.2",
     "solid-js": "^1.7.6",
     "vite": "^4.4.10",
-    "@pandacss/astro": "^0.17.0"
+    "@pandacss/astro": "^0.17.0",
+    "@pandacss/dev": "^0.17.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "^0.17.0",
     "@types/lodash": "^4.14.199",
     "chii": "^1.9.0",
     "prettier": "^3.0.3",
