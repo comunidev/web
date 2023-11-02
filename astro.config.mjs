@@ -2,11 +2,14 @@ import { defineConfig } from "astro/config";
 import solidJs from "@astrojs/solid-js";
 import { defineConfig as viteDefineConfig } from "vite";
 import mdx from "@astrojs/mdx";
-import pandacss from '@pandacss/astro'
+import pandacss from '@pandacss/astro';
+import vercel from "@astrojs/vercel/serverless";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [solidJs(), mdx(), pandacss()],
+  integrations: [solidJs(), mdx(), pandacss(), sitemap()],
+  site: "https://comunidev.com",
   vite: viteDefineConfig({
     plugins: [
       /*
@@ -21,18 +24,27 @@ export default defineConfig({
         '/socket.io': {
           target: 'http://localhost:4500',
           changeOrigin: true,
-          ws: true,
+          ws: true
         }
       }
     },
     build: {
-      target: 'esnext',
-    },
+      target: 'esnext'
+    }
   }),
   markdown: {
     shikiConfig: {
       theme: "github-dark",
       wrap: true
+    }
+  },
+  output: "server",
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true
     },
-  }
+    speedInsights: {
+      enabled: true
+    }
+  })
 });

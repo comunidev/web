@@ -5,6 +5,8 @@ import DiscordBanner from "../components/DiscordBanner.astro";
 import logoWeb from "../images/logo-web.svg";
 import { getCollection } from "astro:content";
 
+export const prerender = true;
+
 const posts = await getCollection(
   "blog",
   (post) => import.meta.env.DEV || post.data.draft === false

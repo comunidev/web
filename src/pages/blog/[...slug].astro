@@ -7,6 +7,8 @@ import "@fontsource/fira-sans/600-italic.css";
 import "@fontsource/fira-sans/400.css";
 import { css } from "../../../styled-system/css";
 
+export const prerender = true;
+
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
   const blogEntries = await getCollection("blog");
