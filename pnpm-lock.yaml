@@ -16,7 +16,7 @@ dependencies:
     version: 3.0.3
   '@astrojs/solid-js':
     specifier: ^3.0.1
-    version: 3.0.2(solid-js@1.8.5)(vite@4.5.0)
+    version: 3.0.2(solid-js@1.8.5)(vite@4.5.2)
   '@astrojs/vercel':
     specifier: ^5.1.0
     version: 5.1.0(astro@3.4.2)
@@ -51,8 +51,8 @@ dependencies:
     specifier: ^1.7.6
     version: 1.8.5
   vite:
-    specifier: ^4.4.10
-    version: 4.5.0
+    specifier: ^4.5.2
+    version: 4.5.2
 
 devDependencies:
   '@types/lodash':
@@ -69,7 +69,7 @@ devDependencies:
     version: 0.12.1
   solid-devtools:
     specifier: ^0.27.3
-    version: 0.27.9(solid-js@1.8.5)(vite@4.5.0)
+    version: 0.27.9(solid-js@1.8.5)(vite@4.5.2)
   type-fest:
     specifier: ^4.6.0
     version: 4.6.0
@@ -78,7 +78,7 @@ devDependencies:
     version: 5.2.2
   vite-plugin-solid:
     specifier: ^2.7.0
-    version: 2.7.2(solid-js@1.8.5)(vite@4.5.0)
+    version: 2.7.2(solid-js@1.8.5)(vite@4.5.2)
 
 packages:
 
@@ -288,14 +288,14 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /@astrojs/solid-js@3.0.2(solid-js@1.8.5)(vite@4.5.0):
+  /@astrojs/solid-js@3.0.2(solid-js@1.8.5)(vite@4.5.2):
     resolution: {integrity: sha512-BGTtS/ygAlcopELdjgTURHnxS2AoDRKjpu3Dgp12TOcArBMCiI/rYdHtlB+ligMm9Bbvar8qdzXsT1zlrxK5jQ==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       solid-js: ^1.4.3
     dependencies:
       solid-js: 1.8.5
-      vite-plugin-solid: 2.7.2(solid-js@1.8.5)(vite@4.5.0)
+      vite-plugin-solid: 2.7.2(solid-js@1.8.5)(vite@4.5.2)
     transitivePeerDependencies:
       - supports-color
       - vite
@@ -2848,8 +2848,8 @@ packages:
       typescript: 5.2.2
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.5.0
-      vitefu: 0.2.5(vite@4.5.0)
+      vite: 4.5.2
+      vitefu: 0.2.5(vite@4.5.2)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
       zod: 3.22.4
@@ -2922,8 +2922,8 @@ packages:
       tsconfck: 3.0.0(typescript@5.2.2)
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.5.0
-      vitefu: 0.2.5(vite@4.5.0)
+      vite: 4.5.2
+      vitefu: 0.2.5(vite@4.5.2)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
       zod: 3.22.4
@@ -6802,7 +6802,7 @@ packages:
       - supports-color
     dev: false
 
-  /solid-devtools@0.27.9(solid-js@1.8.5)(vite@4.5.0):
+  /solid-devtools@0.27.9(solid-js@1.8.5)(vite@4.5.2):
     resolution: {integrity: sha512-J9bmoe+08K04DBv+x0YFCZbZf7zjPvdaAZnGDs9AfPhKZRYv3Y6ng0ttP/niB9HzffTMEJo8PlfLo1WwiQgmyQ==}
     peerDependencies:
       solid-js: ^1.7.0
@@ -6820,7 +6820,7 @@ packages:
       '@solid-devtools/debugger': 0.22.4(solid-js@1.8.5)
       '@solid-devtools/shared': 0.12.3(solid-js@1.8.5)
       solid-js: 1.8.5
-      vite: 4.5.0
+      vite: 4.5.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7489,7 +7489,7 @@ packages:
       vfile-message: 4.0.2
     dev: false
 
-  /vite-plugin-solid@2.7.2(solid-js@1.8.5)(vite@4.5.0):
+  /vite-plugin-solid@2.7.2(solid-js@1.8.5)(vite@4.5.2):
     resolution: {integrity: sha512-GV2SMLAibOoXe76i02AsjAg7sbm/0lngBlERvJKVN67HOrJsHcWgkt0R6sfGLDJuFkv2aBe14Zm4vJcNME+7zw==}
     peerDependencies:
       solid-js: ^1.7.2
@@ -7502,8 +7502,8 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.8.5
       solid-refresh: 0.5.3(solid-js@1.8.5)
-      vite: 4.5.0
-      vitefu: 0.2.5(vite@4.5.0)
+      vite: 4.5.2
+      vitefu: 0.2.5(vite@4.5.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -7542,8 +7542,8 @@ packages:
       fsevents: 2.3.3
     dev: false
 
-  /vite@4.5.0:
-    resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==}
+  /vite@4.5.2:
+    resolution: {integrity: sha512-tBCZBNSBbHQkaGyhGCDUGqeo2ph8Fstyp6FMSvTtsXeZSPpSMGlviAOav2hxVTqFcx8Hj/twtWKsMJXNY0xI8w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -7576,7 +7576,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
 
-  /vitefu@0.2.5(vite@4.5.0):
+  /vitefu@0.2.5(vite@4.5.2):
     resolution: {integrity: sha512-SgHtMLoqaeeGnd2evZ849ZbACbnwQCIwRH57t18FxcXoZop0uQu0uzlIhJBlF/eWVzuce0sHeqPcDo+evVcg8Q==}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0
@@ -7584,7 +7584,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.5.0
+      vite: 4.5.2
 
   /vscode-css-languageservice@6.2.10:
     resolution: {integrity: sha512-sYUZPku4mQ06AWGCbMyjv2tdR6juBW6hTbVPFwbJvNVzdtEfBioQOgkdXg7yMJNWnXkvWSU1FL2kb4Vxu5Cdyw==}
